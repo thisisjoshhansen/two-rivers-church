@@ -1,0 +1,22 @@
+<div id="adminNav">
+	<div id="dash" class="adminNavTab{if !isset($section)}_active{/if}">
+		<a href="/?page=home">
+		Dashboard
+		</a>
+	</div>
+	<div class="adminNavTab{if $section == 'admin_locsservs'}_active{/if}">
+		<a href="/?page=home&sub=admin_locsservs">
+		Locations & Services
+		</a>
+	</div>
+	<div class="adminNavTab{if $section == 'admin_newsevents'}_active{/if}">
+		<a href="/?page=home&sub=admin_newsevents">
+		News & Events
+		</a>
+	</div>
+	<div class="adminNavTab{if $section == 'admin_sermons'}_active{/if}">
+		<a href="/?page=home&sub=admin_sermons">
+		Sermons
+		</a>
+	</div>
+</div>

@@ -1,0 +1,178 @@
+/*
+*	CSS for home.tpl
+*/
+
+#homeContainer {
+	float:left;
+	width:920px;
+	background-color:#323A42;
+	padding:0px 8px 8px 8px;
+}
+
+#sectionContainer {
+	float:left;
+	width:896px;
+	background-color:#024E63;
+	padding:12px;
+}
+
+#welcomeName {
+	color:#22E553;
+	font-size:1.5em;
+	font-weight:bold;
+	font-family:Cambria,'Palatino Linotype','Book Antiqua','URW Palladio L',serif;
+	margin-bottom:10px;
+}
+#ajaxLoading {
+	display:none;
+	float:right;
+}
+
+/*	START ADMIN NAVIGATION	*/
+/* Rounds the top of the admin page */
+.profile_header_bg{display:block;}
+.profile_header_bg *{display:block;height:1px;overflow:hidden;font-size:.01em;background:#323A42;}
+.profile_header_bg1{margin:0px 3px;border-color:#1C282A;border-width:0px 1px;border-style:solid;background:#2C373C;}
+.profile_header_bg2{margin:0px 2px;border-color:#283438;border-width:0px 1px;border-style:solid;}
+.profile_header_bg3{margin:0px 1px;border-color:#283438;border-width:0px 1px;border-style:solid;}
+.profile_header_bg4{border-color:#1C282A;border-width:0px 1px;border-style:solid;}
+.profile_header_bg5{border-color:#283438;border-width:0px 1px;border-style:solid;}
+.profile_header_bgfg{background:#323A42;}
+
+/* Rounds the top of the admin sections */
+.section_header_bg{display:block;}
+.section_header_bg *{display:block;height:1px;overflow:hidden;font-size:.01em;background:#024E63;}
+.section_header_bg1{margin:0px 3px;border-color:#283E49;border-width:0px 2px;border-style:solid;}
+.section_header_bg2{margin:0px 2px;border-color:#283E49;border-width:0px 1px;border-style:solid;}
+.section_header_bg3{margin:0px 1px;border-color:#134757;border-width:0px 1px;border-style:solid;}
+.section_header_bg4{border-color:#283E49;border-width:0px 1px;border-style:solid;}
+.section_header_bg5{border-color:#134757;border-width:0px 1px;border-style:solid;}
+.section_header_bgfg{background:#024E63;}
+
+/* Rounds the top of the active admin tabs */
+.profile_nav_bg *{display:block;height:1px;overflow:hidden;font-size:.01em;background:#024E63}
+.profile_nav_bg1{margin:0px 3px;border-color:#283E49;border-width:0px 2px;border-style:solid;background:#134757;}
+.profile_nav_bg2{margin:0px 2px;border-color:#283E49;border-width:0px 1px;border-style:solid;}
+.profile_nav_bg3{margin:0px 1px;border-color:#134757;border-width:0px 1px;border-style:solid;}
+.profile_nav_bg4{border-color:#283E49;border-width:0px 1px;border-style:solid;}
+.profile_nav_bg5{border-color:#134757;border-width:0px 1px;border-style:solid;}
+.profile_nav_bgfg{background:#024E63;}
+
+/* Rounds the top of the not active admin tabs */
+.profile_nav_bg_notactive *{display:block;height:1px;overflow:hidden;font-size:.01em;background:#525A62}
+.profile_nav_bg1_notactive{margin:0px 3px;border-color:#353D45;border-width:0px 2px;border-style:solid;background:#474F57;}
+.profile_nav_bg2_notactive{margin:0px 2px;border-color:#353D45;border-width:0px 1px;border-style:solid;}
+.profile_nav_bg3_notactive{margin:0px 1px;border-color:#474F57;border-width:0px 1px;border-style:solid;}
+.profile_nav_bg4_notactive{border-color:#353D45;border-width:0px 1px;border-style:solid;}
+.profile_nav_bg5_notactive{border-color:#474F57;border-width:0px 1px;border-style:solid;}
+.profile_nav_bgfg_notactive{background:#525A62;}
+
+.profile_nav_bgfg > a,
+.profile_nav_bgfg_notactive > a {
+	color:#fff;
+	text-decoration:none;
+}
+.profile_nav_bgfg > a {
+	font-weight:bold;
+}
+/*	END ADMIN NAVIGATION	*/
+
+/*	START DASHBOARD	*/
+#constContainer {
+	margin: 20px 0px;
+	width:100%;
+}
+
+#construction {
+	position:relative;
+	margin: 0px auto;
+	background:#000;
+	padding:10px 20px;
+	width:250px;
+	border:#252830 2px outset;
+	text-align:center;
+}
+/*	END DASHBOARD	*/
+
+/*	START LOCATIONS & SERVICES	*/
+/*
+#adminLocs {
+	display:block;
+	float:left;
+	width:300px;
+	line-height:1em;
+	padding:12px;
+	background-color:#000;
+	border:2px inset #848E93;
+}
+
+#adminServs {
+	display:block;
+	float:right;
+	width:300px;
+	line-height:1em;
+	padding:12px;
+	background-color:#000;
+	border:2px inset #848E93;
+}
+*/
+.adminHomeDiv {
+	display:block;
+	width:400px;
+	line-height:1em;
+	padding:12px;
+	background-color:#000;
+	border:2px inset #848E93;
+}
+
+.addButton {
+	color:red;
+	font-size:.9em;
+	float:right;
+	cursor:pointer;
+	margin-top:10px;
+}
+.addButton > span {
+	color:#22E553;
+	padding-left:3px;
+}
+
+.deleteButton {
+	color:#E26060;
+	font-size:.7em;
+	float:right;
+	cursor:pointer;
+}
+.deleteButton > span {
+	padding-left:3px;
+}
+
+.editButton {
+	color:#E2E280;
+	font-size:.7em;
+	float:left;
+	cursor:pointer;
+}
+.editButton > span {
+	padding-left:3px;
+}
+.closeWin {
+	color:#763530;
+	cursor:pointer;
+}
+#deleteAddServs {
+	clear:both;
+	float:left;
+	width:210px;
+	background:#000;
+	padding:4px 6px;
+	border:2px #555 inset;
+	margin-top:10px;
+}
+#deleteAddServs > .addButton,
+#deleteAddServs > .deleteButton {
+	font-size:1em;
+}
+/* END LOCATIONS & SERVICES */
+
+

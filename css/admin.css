@@ -1,0 +1,32 @@
+
+a.editBox {
+	font-size: .75em;
+	font-weight: thin;
+	float: right;
+	color: #60DE37;
+	text-decoration: none;
+}
+
+a.cancelEditBox {
+	font-size: .75em;
+	font-weight: thin;
+	float: left;
+	color: #60DE37;
+	text-decoration: none;
+}
+
+a.saveEditBox {
+	font-size: .75em;
+	font-weight: thin;
+	float: right;
+	color: #60DE37;
+	text-decoration: none;
+}
+
+#colcontent .editBoxDiv,
+#rowcontent .editBoxDiv,
+.editBoxDiv {
+	border:none;
+	margin:0;
+	pading:0;
+}

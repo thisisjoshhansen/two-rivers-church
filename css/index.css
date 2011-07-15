@@ -1,0 +1,283 @@
+/************************
+*****	INDEX	*****
+************************/
+body {
+  	margin:0;
+  	padding:auto;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:1em;
+	line-height:1.8em;
+	text-align:left;
+	color:#808080;
+	background-color:#000000;
+}
+a {
+	outline:none;
+}
+table {
+	width:100%;
+}
+
+ul {
+	list-style-type:none;
+}
+
+#main {
+	position:relative;
+	left: 5px;
+  	width:936px;
+  	margin:0 auto;
+  	text-align:left;
+    padding: 3px 3px 3px 3px;
+	background:transparent;
+	display:block;
+	min-height:800px;
+}
+
+#media {
+	width:100%;
+	height:350px;
+	margin-bottom:.5em;
+}
+
+#randomverse {
+	border:#707070 solid .1em;
+	margin:3em;
+	padding:.3em .7em .3em .7em;
+	height:auto;
+	background-color:#1f1f22;
+	text-align:center;
+	line-height:1.2em;
+}
+
+#randomverse p.verse{
+	font-size:1.2em;
+	margin: 0em;
+}
+
+#randomverse p.ref{
+	text-align:center;
+	font-size:1.2em;
+	font-weight:bold;
+	margin: 0em;
+}
+
+
+
+
+/*****************************
+*****	TEXT STYLES	*****
+*****************************/
+h1 {
+	font-size:1.5em;
+	font-weight:bold;
+	margin:.5em 0em;
+}
+h2 {
+	font-size:1em;
+	font-weight:bold;
+}
+.head, .date, .title, .summary {
+	display:block;
+	clear:both;
+}
+.head, .head a {
+	margin-bottom:.3em;
+	font-size:1.5em;
+	color:#168FF8;
+	text-decoration:none;
+	white-space:nowrap;
+}
+.date {
+	font-size:.6em;
+	color:#505050;
+}
+.title, .title a {
+	font-size:1em;
+	color:#FFFFFF;
+	text-decoration:none;
+	margin:.5em 0em .2em 0em;
+	white-space:pre-wrap;
+}
+.summary, .summary a {
+	/*font-family:"Times New Roman", Times, serif;*/
+	font-size:.9em;
+	color:#808080;
+	padding-left:1em;
+	text-decoration:none;
+	white-space:pre-wrap;
+}
+.pagecont {
+	margin:0em 3em 3em 3em;
+}
+
+.consum {
+	font-family:inherit;
+	background-color:transparent;
+	color:#808080;
+	font-size:.9em;
+	padding:0em 0em 0em 1em;
+	text-decoration:none;
+	margin:0;
+	width:100%;
+	max-height:500px;
+	border:none;
+	resize:none;
+	white-space:pre-wrap;
+}
+
+.contitle {
+	font-family:inherit;
+	background-color:transparent;
+	color:#FFFFFF;
+	font-size:.9em;
+	padding-left:1em;
+	text-decoration:none;
+	margin:0;
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	border:none;
+	resize:none;
+	white-space:pre-wrap;
+}
+
+
+/*****************************
+*****	PAGE STYLES	*****
+*****************************/
+
+/****	CONTACT US	****/
+#contactus{
+	width:20em;
+}
+
+/****	ROW CONT		****/
+#rowcontent {
+	margin:0;
+	padding:0;
+	float:left;
+	width:100%;
+}
+#rowcontent .rowdiv {
+	background-color:#1f1f22;
+	border:#404040 solid 1px;
+	padding:10px 10px 15px 10px;
+	text-align:left;
+	font-size:1em;
+	line-height:1em;
+	margin-bottom:10px;
+}
+
+#rowcontent ul, #colcontent ul {
+	list-style-type:none;
+	text-indent:-2.5em;
+}
+#rowcontent li, #colcontent li {
+	color:#FF0000;
+}
+
+
+/****	COLUMN CONT	****/
+#colcontent {
+	margin:0px 0px 10px 0px;
+	padding:0;
+	float:left;
+	width:100%;
+}
+#colcontent div {
+	background-color:#1f1f22;
+	border:#404040 solid 1px;
+	padding:10px;
+	text-align:left;
+	font-size:1em;
+	line-height:1em;
+}
+.twoCol {
+	float:left;
+	width:47%;
+}
+.twoColLast {
+	float:right;
+	width:47%;
+}
+.threeCol, .threeColLast {
+	float:left;
+	width:30%;
+	margin-right:1%;
+	padding:10px;
+	text-align:left;
+	font-size:1em;
+	line-height:1em;
+}
+.threeColLast {
+	margin:0em;
+}
+
+
+
+/************************
+*****	HEADER	*****
+************************/
+/* logo */
+#header {
+	width:100%;
+	margin-bottom:1em;
+}
+
+#header #logo {
+	text-align:center;
+	background-color:transparent;
+}
+
+#header #logo img {
+	border:none;
+	width:515px;
+}
+
+
+/************************
+*****	FOOTER	*****
+************************/
+#footer {
+	clear:both;
+	height:10px;
+	margin:0;
+	width:940px;
+	border-top:1px solid #FFFFFF;
+	text-align:center;
+	font-size:.75em;
+}
+
+#footer a {
+	color:#FFFFFF;
+	text-decoration:none;
+}
+
+#footer .copywrite {
+	color:#FFFFFF;
+	float:left
+}
+
+#footer .links {
+	float:right;
+	padding-left:20px;
+}
+
+/*****************************
+*****	LOGIN/LOGOUT	*****
+*****************************/
+#logFormDiv {
+	position:relative;
+	margin: 0px auto;
+	background:#252830;
+	padding:10px 20px;
+	width:200px;
+	height:200px;
+	border:#252830 2px outset;
+}
+
+#loginContainer{
+	margin: 20px 0px;
+	width:100%;
+}

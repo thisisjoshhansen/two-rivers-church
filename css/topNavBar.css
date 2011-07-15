@@ -1,0 +1,138 @@
+/****************************
+*****		TopNav		*****
+****************************/
+
+/*	PACKAGE:	two rivers church
+*	DATE:		3 OCT 2010
+*	PURPOSE:	style for the top navigation bar
+*	NOTES:		very heavy on the styling, sorry...
+*/
+
+
+
+/************************/
+/**  div and ul setup  **/
+/************************/
+#topNavDiv {
+	display:block;
+	height:35px;
+}
+
+#topNavBar {
+	border-top:.2em solid #FFFFFF;
+	border-bottom:.2em solid #FFFFFF;
+	clear:both;
+	float:left;
+	height:35px;
+	margin:0 0 45px 0;
+	padding:0;
+	line-height:2em;
+	width:936;
+	text-align:center;
+}
+
+/************************/
+/**  top menu styling  **/
+/************************/
+#topNavBar > li {
+	float:left;
+	margin:0;
+}
+#topNavBar li ul {
+	list-style-type:none;
+	display:none;
+}
+#topNavBar > li .subNav_activeUL {
+	display:block;
+}
+#topNavBar li:hover ul {
+	display:block;
+}
+#topNavBar > li a, li a.topNav_active {
+	display:block;
+	color:#FFFFFF;
+	text-decoration:none;
+	font-size:1.4em;
+}
+#topNavBar > li a:hover {
+	color:#505050;
+}
+#topNavBar > li a.topNav_active {
+	color:#047BBE;
+}
+
+/*****************************/
+/**  top menu possitioning  **/
+/*****************************/
+#topNavBar a {
+	position:absolute;
+}
+#topNavBar a.newhere {
+	left:0;
+	width:190px;
+}
+#topNavBar a.whoweare {
+	left:190;
+	width:170px;
+}
+#topNavBar a.locationservices {
+	left:360;
+	width: 260px;
+}
+#topNavBar a.newsevents {
+	left:620;
+	width:200px;
+}
+#topNavBar a.giving {
+	left:820;
+	width: 120px;
+}
+#topNavBar #topNav_active {
+	color:#168FF8;
+}
+#topNavBar #subNav_active {
+	color:#FFFFFF;
+}
+
+/************************/
+/**  sub menu styling  **/
+/************************/
+#topNavBar > li > ul {
+	clear:both;
+	border-bottom:.1em solid #606060;
+	float:left;
+	margin-top:5.4em;
+	padding:0;
+	width:936;
+	text-align:center;
+	font-size:.8em;
+}
+#topNavBar >li > ul .topNav_activeUL {
+	display:block;
+}
+#topNavBar > li > ul > li a {
+	color:#606060;
+	position:absolute;
+	top:203;
+}
+
+/*****************************/
+/**  sub menu possitioning  **/
+/*****************************/
+/* i am new here */
+
+
+/* who we are */
+#topNavBar a.doctrine		{ left:120; }
+#topNavBar a.corevalues 		{ left:350; }
+#topNavBar a.ministries 		{ left:550; }
+#topNavBar a.leadership 		{ left:720; }
+
+/* locations & services */
+#topNavBar a.directions		{ left:225; }
+#topNavBar a.commingsermons	{ right:225;}
+
+/* news & events */
+#topNavBar a.trblog 		{ left:150; }
+#topNavBar a.news 			{ left:415; }
+#topNavBar a.events 		{ left:650; }
