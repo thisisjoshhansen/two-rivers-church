@@ -16,6 +16,6 @@ include('../models/class.models.TRC_news.php');
 $trc_news = new TRC_news();
 
 if( $trc_news->editNews($_GET['id'], $_GET['title'], $_GET['summary'], $_GET['news'], $_SESSION['admin']) )
-	return '1';
-else return '2';
+	echo '1';
+else echo '2';
 ?>

@@ -90,6 +90,19 @@ switch( $section ) {
 		$doctrine = $TRC_doctrine->getAllDoctrine();
 		$corevals = $TRC_corevals->getAllVals();
 
+		if( isset($_GET['docID']) ) {
+//print 'hi'; exit;
+			$smarty->assign('docID', $_GET['docID']);
+		} else {
+			$docID = $TRC_doctrine->getMinDoc();
+			$smarty->assign('docID', $docID);
+		}
+		if( isset($_GET['valID']) ) {
+			$smarty->assign('valID', $_GET['valID']);
+		} else {
+			$smarty->assign('valID', 0);
+		}
+
 		$smarty->assign('doctrine', $doctrine);
 		$smarty->assign('corevals', $corevals);
 		break;

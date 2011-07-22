@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.7, created on 2011-07-14 17:30:50
+<?php /* Smarty version Smarty-3.0.7, created on 2011-07-19 19:38:05
          compiled from "/var/trc/smarty/templates/home.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:18255448664e1f8a3ac83659-50256035%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1341619984e263f8d58ee07-45178359%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'c03372a5c558afbc207fd8fbfe67542ce748b553' => 
     array (
       0 => '/var/trc/smarty/templates/home.tpl',
-      1 => 1310689849,
+      1 => 1311129484,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '18255448664e1f8a3ac83659-50256035',
+  'nocache_hash' => '1341619984e263f8d58ee07-45178359',
   'function' => 
   array (
   ),
@@ -159,40 +159,111 @@ if ($_smarty_tpl->_count($_from) > 0){
 
 	<!--DOCTRINE & VALUES-->
 	<?php }elseif($_smarty_tpl->getVariable('section')->value=='admin_docvals'){?>
-		<div id="adminDoct" class="adminHomeDiv" style="float:left;">
-			<span class="head" style="margin-bottom:20px;">Doctrine</span>
-			<?php  $_smarty_tpl->tpl_vars['doc'] = new Smarty_Variable;
+		<!--Doctrines-->
+		<div id="admin-topic:docs" class="adminHomeDiv" style="clear:both;float:left;width:870px;">
+			<div style="float:left;width:150px;">
+				<div style="float:left;">
+					<span class="head" style="margin-bottom:20px;">Doctrine</span>
+					<?php  $_smarty_tpl->tpl_vars['doc'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('doctrine')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['doc']->key => $_smarty_tpl->tpl_vars['doc']->value){
+?>
+						<span class="title" onclick="showTopicDiv('<?php echo $_smarty_tpl->tpl_vars['doc']->value['ID'];?>
+', 'docs');" style="margin:0px 0px 12px 12px;cursor:pointer;font-size:.9em;"><?php echo $_smarty_tpl->tpl_vars['doc']->value['title'];?>
+</span>
+					<?php }} ?>
+				</div>
+			</div>
+
+			<div style="margin-left:200px;">
+				<?php  $_smarty_tpl->tpl_vars['doc'] = new Smarty_Variable;
  $_from = $_smarty_tpl->getVariable('doctrine')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
  $_smarty_tpl->tpl_vars['smarty']->value['foreach']['foo']['index']=-1;
 if ($_smarty_tpl->_count($_from) > 0){
     foreach ($_from as $_smarty_tpl->tpl_vars['doc']->key => $_smarty_tpl->tpl_vars['doc']->value){
  $_smarty_tpl->tpl_vars['smarty']->value['foreach']['foo']['index']++;
 ?>
-				<span class="title"><?php echo $_smarty_tpl->getVariable('smarty')->value['foreach']['foo']['index']+1;?>
-.&nbsp;<?php echo $_smarty_tpl->tpl_vars['doc']->value['title'];?>
-</span>
-				<span class="summary"><?php echo $_smarty_tpl->tpl_vars['doc']->value['summary'];?>
-</span>
-			<?php }} ?>
-		</div>
+					<div id="docs:<?php echo $_smarty_tpl->tpl_vars['doc']->value['ID'];?>
+" style="<?php if ($_smarty_tpl->tpl_vars['doc']->value['ID']!=$_smarty_tpl->getVariable('docID')->value){?>display:none;<?php }?>min-height:375px;position:relative;">
 
-		<div id="adminVals" class="adminHomeDiv" style="float:right;">
-			<span class="head" style="margin-bottom:20px;">Core Values</span>
-			<?php  $_smarty_tpl->tpl_vars['coreval'] = new Smarty_Variable;
+						<span class="title" style="clear:none;font-size:1.5em;margin-bottom:20px;"><?php echo $_smarty_tpl->tpl_vars['doc']->value['title'];?>
+</span>
+						<div style="position:absolute;top:0;right:0;width:200px;">
+							<a class="editButton" onclick="openDialog(<?php echo $_smarty_tpl->tpl_vars['doc']->value['ID'];?>
+, 'docs');">+<span>Edit!</span></a>
+							<a class="deleteButton" onclick="admin_deleteItem(<?php echo $_smarty_tpl->tpl_vars['doc']->value['ID'];?>
+, 'docs');">+<span>Delete!</span></a>
+						</div>
+
+						<span class="title" style="font-size:.8em;clear:none;">Summary</span>
+						<span class="summary" style="font-size:.8em;clear:none;margin-bottom:10px;"><?php echo $_smarty_tpl->tpl_vars['doc']->value['summary'];?>
+</span>
+
+						<span class="title" style="font-size:.8em;clear:none;">Description</span>
+						<span class="summary" style="clear:none;"><?php echo $_smarty_tpl->tpl_vars['doc']->value['description'];?>
+</span>
+
+					</div>
+
+				<?php }} ?>
+			</div>
+			<a class="addButton" onclick="openDialog('0', 'docs');" style="clear:both;float:left;">+<span>Add Doctrine!</span></a>
+		</div>
+		<div id="admin-dialog:docs" title="Two Rivers Doctrine"></div><!--This line must be outside of 'adminDocs'-->
+
+		<!--Core Values-->
+		<div id="admin-topic:vals" class="adminHomeDiv" style="clear:both;float:left;width:870px;margin-top:20px;">
+			<div style="float:left;width:150px;">
+				<div style="float:left;">
+					<span class="head" style="margin-bottom:20px;">Core Values</span>
+					<?php  $_smarty_tpl->tpl_vars['coreval'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->getVariable('corevals')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+if ($_smarty_tpl->_count($_from) > 0){
+    foreach ($_from as $_smarty_tpl->tpl_vars['coreval']->key => $_smarty_tpl->tpl_vars['coreval']->value){
+?>
+						<span class="title" onclick="showTopicDiv('<?php echo $_smarty_tpl->tpl_vars['coreval']->value['ID'];?>
+', 'vals');" style="margin:0px 0px 12px 12px;cursor:pointer;font-size:.9em;"><?php echo $_smarty_tpl->tpl_vars['coreval']->value['title'];?>
+</span>
+					<?php }} ?>
+				</div>
+			</div>
+
+			<div style="margin-left:200px;">
+				<?php  $_smarty_tpl->tpl_vars['coreval'] = new Smarty_Variable;
  $_from = $_smarty_tpl->getVariable('corevals')->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
  $_smarty_tpl->tpl_vars['smarty']->value['foreach']['foo']['index']=-1;
 if ($_smarty_tpl->_count($_from) > 0){
     foreach ($_from as $_smarty_tpl->tpl_vars['coreval']->key => $_smarty_tpl->tpl_vars['coreval']->value){
  $_smarty_tpl->tpl_vars['smarty']->value['foreach']['foo']['index']++;
 ?>
-				<span class="title" style="margin-bottom:.2em;"><?php echo $_smarty_tpl->getVariable('smarty')->value['foreach']['foo']['index']+1;?>
-.&nbsp;<?php echo $_smarty_tpl->tpl_vars['coreval']->value['title'];?>
-</span>
-				<span class="summary" style="margin:0em 0em 1em .3em;"><?php echo $_smarty_tpl->tpl_vars['coreval']->value['summary'];?>
-</span>
-			<?php }} ?>
-		</div>
+					<div id="vals:<?php echo $_smarty_tpl->tpl_vars['coreval']->value['ID'];?>
+" style="<?php if ($_smarty_tpl->getVariable('smarty')->value['foreach']['foo']['index']!=0){?>display:none;<?php }?>min-height:375px;position:relative;">
 
+						<span class="title" style="clear:none;font-size:1.5em;margin-bottom:20px;"><?php echo $_smarty_tpl->tpl_vars['coreval']->value['title'];?>
+</span>
+						<div style="position:absolute;top:0;right:0;width:200px;">
+							<a class="editButton" onclick="openDialog(<?php echo $_smarty_tpl->tpl_vars['coreval']->value['ID'];?>
+, 'vals');">+<span>Edit!</span></a>
+							<a class="deleteButton" onclick="admin_deleteItem(<?php echo $_smarty_tpl->tpl_vars['coreval']->value['ID'];?>
+, 'vals');">+<span>Delete!</span></a>
+						</div>
+
+						<span class="title" style="font-size:.8em;clear:none;">Summary</span>
+						<span class="summary" style="font-size:.8em;clear:none;margin-bottom:10px;"><?php echo $_smarty_tpl->tpl_vars['coreval']->value['summary'];?>
+</span>
+
+						<span class="title" style="font-size:.8em;clear:none;">Description</span>
+						<span class="summary" style="clear:none;"><?php echo $_smarty_tpl->tpl_vars['coreval']->value['description'];?>
+</span>
+
+					</div>
+
+				<?php }} ?>
+			</div>
+			<a class="addButton" onclick="openDialog('0', 'vals');" style="clear:both;float:left;">+<span>Add a Core Value!</span></a>
+		</div>
+		<div id="admin-dialog:vals" title="Two Rivers Core Values"></div><!--This line must be outside of 'adminVals'-->
 	
 	<!--SERMONS-->
 	<?php }elseif($_smarty_tpl->getVariable('section')->value=='admin_sermons'){?>

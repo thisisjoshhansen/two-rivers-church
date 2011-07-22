@@ -21,7 +21,7 @@
 		echo "mail not sent!";
 */
 
-require_once('/var/trc/libs/gen.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/libs/gen.php');
 
 class email {
         

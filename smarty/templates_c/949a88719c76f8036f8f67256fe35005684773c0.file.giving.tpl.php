@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.7, created on 2011-06-22 15:17:51
+<?php /* Smarty version Smarty-3.0.7, created on 2011-07-22 09:55:46
          compiled from "/var/trc/smarty/templates/giving.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2052561744e026a0f31be70-22134011%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1466913884e29ab921ca8d3-49618043%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '949a88719c76f8036f8f67256fe35005684773c0' => 
     array (
       0 => '/var/trc/smarty/templates/giving.tpl',
-      1 => 1308776701,
+      1 => 1309448937,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2052561744e026a0f31be70-22134011',
+  'nocache_hash' => '1466913884e29ab921ca8d3-49618043',
   'function' => 
   array (
   ),

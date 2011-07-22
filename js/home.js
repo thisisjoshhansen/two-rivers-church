@@ -21,6 +21,22 @@ function toggleDiv(div) {
 	}
 }
 
+function showValueDiv(valID) {
+	// Hide all the news divs
+	$('div[id^="valID:"]').hide();
+
+	// Show the wanted news div
+	$('div[id^="valID:'+valID+'"]').show();
+}
+
+function showTopicDiv( id, topic ) {
+	// Hide all the other divs for that topic
+	$('div[id^="'+topic+':"]').hide();
+
+	// Show the wanted div
+	$('#'+topic+'\\:'+id).show();
+}
+
 window.size = function()
 {
 	var w = 0;
@@ -194,6 +210,32 @@ function popUpWindow(parentLayer, childLayer, id) {
 			}
 			else
 				$('#'+childLayer).show();
+		}
+	);
+}
+
+
+/******************
+	DIALOG
+******************/
+function openDialog(id, topic) {
+	$("#admin-dialog\\:"+topic).load("dialogs/admin-dialog:"+topic+".php", {id: id},
+		function(response) {
+			if( response == '-1' ) {
+				// Session has expired
+				alert('You must be logged in as a manager to do this!');
+			}
+			else if( response == '0' ) {
+				// id was not set in the POST variables for some reason
+				alert('There was an error with this script, please inform a web developer!');
+			}
+			else {
+				// Set the dialog box title
+				$("#admin-dialog\\:"+topic).dialog( "option", "title", $("#admin-dialog\\:"+topic+"-title").text() );
+
+				// Open the dialog
+				$("#admin-dialog\\:"+topic).dialog( "open" );
+			}
 		}
 	);
 }

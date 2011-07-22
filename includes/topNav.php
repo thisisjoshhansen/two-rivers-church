@@ -21,7 +21,9 @@
 			array(
 				'title'	=> 'i am new here',
 				'link'	=> 'newhere',
-				'subs'	=> array()
+				'subs'	=> array(	'locations & services'	=> 'locationservices',
+								'get directions'		=> 'directions',
+								'upcomming sermons'		=> 'commingsermons')
 			),
 			array(
 				'title'	=> 'who we are',
@@ -32,10 +34,11 @@
 								'leadership'		=> 'leadership')
 			),
 			array(	
-				'title'	=> 'locations & services',
-				'link'	=> 'locationservices',
-				'subs'	=> array(	'get directions'		=> 'directions',
-								'upcomming sermons'		=> 'commingsermons' )
+				'title'	=> 'sermons & media',
+				'link'	=> 'sermonmedia',
+				'subs'	=> array(	'current series'	=> 'currentseries',
+								'all sermons'		=> 'sermons',
+								'media'			=> 'media'  )
 			),
 			array(
 				'title' 	=> 'news & events',

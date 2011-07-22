@@ -75,7 +75,7 @@
 	left:190;
 	width:170px;
 }
-#topNavBar a.locationservices {
+#topNavBar a.sermonmedia {
 	left:360;
 	width: 260px;
 }
@@ -119,8 +119,11 @@
 /*****************************/
 /**  sub menu possitioning  **/
 /*****************************/
-/* i am new here */
 
+/* i am new here */
+#topNavBar a.locationservices { left:150; }
+#topNavBar a.directions		{ left:417; }
+#topNavBar a.commingsermons	{ left:630; }
 
 /* who we are */
 #topNavBar a.doctrine		{ left:120; }
@@ -128,11 +131,12 @@
 #topNavBar a.ministries 		{ left:550; }
 #topNavBar a.leadership 		{ left:720; }
 
-/* locations & services */
-#topNavBar a.directions		{ left:225; }
-#topNavBar a.commingsermons	{ right:225;}
+/* sermons & media */
+#topNavBar a.currentseries	{ left:200; }
+#topNavBar a.sermons		{ left:425; }
+#topNavBar a.media			{ left:630; }
 
 /* news & events */
-#topNavBar a.trblog 		{ left:150; }
-#topNavBar a.news 			{ left:415; }
-#topNavBar a.events 		{ left:650; }
+#topNavBar a.trblog 		{ left:200; }
+#topNavBar a.news 			{ left:425; }
+#topNavBar a.events 		{ left:630; }

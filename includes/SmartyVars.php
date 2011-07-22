@@ -1,8 +1,8 @@
 <?php
 
-$smarty->setTemplateDir('/var/trc/smarty/templates'); 
-$smarty->setCompileDir('/var/trc/smarty/templates_c');
-$smarty->setCacheDir('/var/trc/smarty/cache');
-$smarty->setConfigDir('/var/trc/smarty/configs');
+$smarty->setTemplateDir($_SERVER['DOCUMENT_ROOT'].'/smarty/templates'); 
+$smarty->setCompileDir($_SERVER['DOCUMENT_ROOT'].'/smarty/templates_c');
+$smarty->setCacheDir($_SERVER['DOCUMENT_ROOT'].'/smarty/cache');
+$smarty->setConfigDir($_SERVER['DOCUMENT_ROOT'].'/smarty/configs');
 
 ?>

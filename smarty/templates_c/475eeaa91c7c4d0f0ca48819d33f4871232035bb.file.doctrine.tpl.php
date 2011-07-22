@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.7, created on 2011-06-22 14:17:10
+<?php /* Smarty version Smarty-3.0.7, created on 2011-07-19 11:00:06
          compiled from "/var/trc/smarty/templates/doctrine.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:14154063524e025bd6677af6-88821528%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:20266126334e25c626733b13-93717868%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '475eeaa91c7c4d0f0ca48819d33f4871232035bb' => 
     array (
       0 => '/var/trc/smarty/templates/doctrine.tpl',
-      1 => 1308776677,
+      1 => 1310689619,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '14154063524e025bd6677af6-88821528',
+  'nocache_hash' => '20266126334e25c626733b13-93717868',
   'function' => 
   array (
   ),
@@ -43,7 +43,7 @@ if ($_smarty_tpl->_count($_from) > 0){
  $_smarty_tpl->tpl_vars['smarty']->value['foreach']['foo']['index']++;
 ?>
 			<span class="title"><?php echo $_smarty_tpl->getVariable('smarty')->value['foreach']['foo']['index']+1;?>
-&nbsp<?php echo $_smarty_tpl->tpl_vars['doc']->value['title'];?>
+.&nbsp;<?php echo $_smarty_tpl->tpl_vars['doc']->value['title'];?>
 </span>
 			<span class="summary"><?php echo $_smarty_tpl->tpl_vars['doc']->value['description'];?>
 </span>

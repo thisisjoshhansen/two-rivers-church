@@ -28,7 +28,7 @@ ul {
   	width:936px;
   	margin:0 auto;
   	text-align:left;
-    padding: 3px 3px 3px 3px;
+	padding: 3px 3px 3px 3px;
 	background:transparent;
 	display:block;
 	min-height:800px;
@@ -280,4 +280,17 @@ h2 {
 #loginContainer{
 	margin: 20px 0px;
 	width:100%;
+}
+
+/*****************************
+*****	LOGIN/LOGOUT	*****
+*****************************/
+#sermon_play_container {
+	float:left;
+	position:relative;
+	left:25%;
+	text-align:center;
+}
+#sermon_play_iframe {
+	border:8px #FF0000 solid;
 }

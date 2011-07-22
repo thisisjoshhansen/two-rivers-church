@@ -40,15 +40,58 @@ switch( $page ) {
 	case 'newhere':
 		$TRC_info = new TRC_info();
 		$TRC_corevals = new TRC_corevals();
+		$TRC_locServs = new TRC_locationservices();
 
-		$infoTitles = array('docstatement', 'corevalues', 'locsservs', 'newsevents');
-		$info = $TRC_info->getMultItems($infoTitles);
+		switch( $sub ) {
+			case 'directions':
+				$smarty->display('construction.tpl');
 
-		$corevals = $TRC_corevals->getAllVals();
+				break;
+			case 'commingsermons':
+				$smarty->display('construction.tpl');
 
-		$smarty->assign('corevals', $corevals);
-		$smarty->assign('info', $info);
-		$smarty->display('newhere.tpl');
+				break;
+			case 'locationservices':
+				$locations = $TRC_locServs->getAllLocations();
+				$services = $TRC_locServs->getAllServices();
+
+				// Determine which locations have services
+				$locIDs = array();
+				foreach( $services as $service ) {
+					if( !in_array($service['locid'], $locIDs) )
+						$locIDs[] = $service['locid'];
+				}
+				unset( $service );
+				foreach( $locations as &$location ) {
+					if( in_array($location['ID'], $locIDs) )
+						$location['hasService'] = 1;
+					else
+						$location['hasService'] = 0;
+				}
+				unset( $location );
+	
+				$dayOfWeek = array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+				foreach( $services as &$service ) {
+					$service['time'] = $dayOfWeek[$service['dayofweek']]." ".formatTimeStr( $service['hour'], $service['minute'] );
+				}
+
+				$smarty->assign('locations', $locations);
+				$smarty->assign('services', $services);
+
+				$smarty->display('locationservices.tpl');
+
+				break;
+			default:
+				$infoTitles = array('docstatement', 'corevalues', 'locsservs', 'newsevents');
+				$info = $TRC_info->getMultItems($infoTitles);
+
+				$corevals = $TRC_corevals->getAllVals();
+
+				$smarty->assign('corevals', $corevals);
+				$smarty->assign('info', $info);
+				$smarty->display('newhere.tpl');
+		}
+
 		break;
 
 	case 'whoweare':
@@ -108,46 +151,9 @@ switch( $page ) {
 
 		break;
 
-	case 'locationservices':
-		$TRC_locServs = new TRC_locationServices();
+	case 'sermonmedia':
+		include('sermons_media.php');
 
-		switch( $sub ) {
-			case 'directions':
-				$smarty->display('construction.tpl');
-				break;
-			case 'commingsermons':
-				$smarty->display('construction.tpl');
-				break;
-			default:
-				$locations = $TRC_locServs->getAllLocations();
-				$services = $TRC_locServs->getAllServices();
-
-				// Determine which locations have services
-				$locIDs = array();
-				foreach( $services as $service ) {
-					if( !in_array($service['locid'], $locIDs) )
-						$locIDs[] = $service['locid'];
-				}
-				unset( $service );
-				foreach( $locations as &$location ) {
-					if( in_array($location['ID'], $locIDs) )
-						$location['hasService'] = 1;
-					else
-						$location['hasService'] = 0;
-				}
-				unset( $location );
-	
-				$dayOfWeek = array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
-				foreach( $services as &$service ) {
-					$service['time'] = $dayOfWeek[$service['dayofweek']]." ".formatTimeStr( $service['hour'], $service['minute'] );
-				}
-
-				$smarty->assign('locations', $locations);
-				$smarty->assign('services', $services);
-
-				$smarty->display('locationservices.tpl');
-				break;
-		}
 		break;
 
 	case 'newsevents':

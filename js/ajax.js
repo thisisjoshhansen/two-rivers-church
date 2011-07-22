@@ -6,9 +6,6 @@
 */
 
 /*	ADMIN	*/
-function redrawDiv(div) {
-	$('#'+div).load('ajax/redraw_'+div+'.php');
-}
 
 // EVENTS STUFF
 function admin_addEvent() {
@@ -177,6 +174,7 @@ function admin_addLocation() {
 		success:function(response) {
 			$('#admin_locationForm').hide();
 			redrawDiv('adminLocs');
+			redrawDiv('adminServs');
 		},
 		error:function(xhr, err, e) {
 			alert('ERROR:\n'+err);
@@ -193,6 +191,7 @@ function admin_deleteLocation(ID) {
 	$.post("/ajax/admin_deleteLocation.php", data, 
 		function(response) {
 			redrawDiv('adminLocs');
+			redrawDiv('adminServs');
 		}
 	);
 }
@@ -215,6 +214,7 @@ function admin_editLocation(ID) {
 		success:function(response) {
 			$('#admin_locationForm').hide();
 			redrawDiv('adminLocs');
+			redrawDiv('adminServs');
 		},
 		error:function(xhr, err, e) {
 			alert('ERROR:\n'+err);
@@ -300,6 +300,25 @@ function admin_deleteService(checkboxID) {
 	$.post("ajax/admin_deleteService.php", data, 
 		function(response) {
 			redrawDiv('adminServs');
+		}
+	);
+}
+
+// DOCTRINE & CORE VALUE STUFF
+function admin_deleteItem(ID, topic) {
+	if( !confirm("This will permanentally delete this doctrine item!") )
+		return;
+
+	var data = { id: ID };
+
+	$.post("ajax/admin/delete_"+topic+".php", data, 
+		function(response) {
+			data = { id: '-1' };
+			$('#admin-topic\\:'+topic).load('ajax/redraw/admin-topic:'+topic+'.php');
+
+			if( response != '1' ) {
+				alert("Something went wrong...");
+			}
 		}
 	);
 }

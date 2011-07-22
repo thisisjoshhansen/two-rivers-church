@@ -96,22 +96,75 @@
 
 	<!--DOCTRINE & VALUES-->
 	{elseif $section == 'admin_docvals'}
-		<div id="adminDoct" class="adminHomeDiv" style="float:left;">
-			<span class="head" style="margin-bottom:20px;">Doctrine</span>
-			{foreach from=$doctrine item=doc name=foo}
-				<span class="title">{$smarty.foreach.foo.index + 1}.&nbsp;{$doc.title}</span>
-				<span class="summary">{$doc.summary}</span>
-			{/foreach}
-		</div>
+		<!--Doctrines-->
+		<div id="admin-topic:docs" class="adminHomeDiv" style="clear:both;float:left;width:870px;">
+			<div style="float:left;width:150px;">
+				<div style="float:left;">
+					<span class="head" style="margin-bottom:20px;">Doctrine</span>
+					{foreach $doctrine as $doc}
+						<span class="title" onclick="showTopicDiv('{$doc.ID}', 'docs');" style="margin:0px 0px 12px 12px;cursor:pointer;font-size:.9em;">{$doc.title}</span>
+					{/foreach}
+				</div>
+			</div>
 
-		<div id="adminVals" class="adminHomeDiv" style="float:right;">
-			<span class="head" style="margin-bottom:20px;">Core Values</span>
-			{foreach from=$corevals item=coreval name=foo}
-				<span class="title" style="margin-bottom:.2em;">{$smarty.foreach.foo.index + 1}.&nbsp;{$coreval.title}</span>
-				<span class="summary" style="margin:0em 0em 1em .3em;">{$coreval.summary}</span>
-			{/foreach}
-		</div>
+			<div style="margin-left:200px;">
+				{foreach from=$doctrine item=doc name=foo}
+					<div id="docs:{$doc.ID}" style="{if $doc.ID != $docID}display:none;{/if}min-height:375px;position:relative;">
 
+						<span class="title" style="clear:none;font-size:1.5em;margin-bottom:20px;">{$doc.title}</span>
+						<div style="position:absolute;top:0;right:0;width:200px;">
+							<a class="editButton" onclick="openDialog({$doc.ID}, 'docs');">+<span>Edit!</span></a>
+							<a class="deleteButton" onclick="admin_deleteItem({$doc.ID}, 'docs');">+<span>Delete!</span></a>
+						</div>
+
+						<span class="title" style="font-size:.8em;clear:none;">Summary</span>
+						<span class="summary" style="font-size:.8em;clear:none;margin-bottom:10px;">{$doc.summary}</span>
+
+						<span class="title" style="font-size:.8em;clear:none;">Description</span>
+						<span class="summary" style="clear:none;">{$doc.description}</span>
+
+					</div>
+
+				{/foreach}
+			</div>
+			<a class="addButton" onclick="openDialog('0', 'docs');" style="clear:both;float:left;">+<span>Add Doctrine!</span></a>
+		</div>
+		<div id="admin-dialog:docs" title="Two Rivers Doctrine"></div><!--This line must be outside of 'adminDocs'-->
+
+		<!--Core Values-->
+		<div id="admin-topic:vals" class="adminHomeDiv" style="clear:both;float:left;width:870px;margin-top:20px;">
+			<div style="float:left;width:150px;">
+				<div style="float:left;">
+					<span class="head" style="margin-bottom:20px;">Core Values</span>
+					{foreach $corevals as $coreval}
+						<span class="title" onclick="showTopicDiv('{$coreval.ID}', 'vals');" style="margin:0px 0px 12px 12px;cursor:pointer;font-size:.9em;">{$coreval.title}</span>
+					{/foreach}
+				</div>
+			</div>
+
+			<div style="margin-left:200px;">
+				{foreach from=$corevals item=coreval name=foo}
+					<div id="vals:{$coreval.ID}" style="{if $smarty.foreach.foo.index != 0}display:none;{/if}min-height:375px;position:relative;">
+
+						<span class="title" style="clear:none;font-size:1.5em;margin-bottom:20px;">{$coreval.title}</span>
+						<div style="position:absolute;top:0;right:0;width:200px;">
+							<a class="editButton" onclick="openDialog({$coreval.ID}, 'vals');">+<span>Edit!</span></a>
+							<a class="deleteButton" onclick="admin_deleteItem({$coreval.ID}, 'vals');">+<span>Delete!</span></a>
+						</div>
+
+						<span class="title" style="font-size:.8em;clear:none;">Summary</span>
+						<span class="summary" style="font-size:.8em;clear:none;margin-bottom:10px;">{$coreval.summary}</span>
+
+						<span class="title" style="font-size:.8em;clear:none;">Description</span>
+						<span class="summary" style="clear:none;">{$coreval.description}</span>
+
+					</div>
+
+				{/foreach}
+			</div>
+			<a class="addButton" onclick="openDialog('0', 'vals');" style="clear:both;float:left;">+<span>Add a Core Value!</span></a>
+		</div>
+		<div id="admin-dialog:vals" title="Two Rivers Core Values"></div><!--This line must be outside of 'adminVals'-->
 	
 	<!--SERMONS-->
 	{elseif $section == 'admin_sermons'}

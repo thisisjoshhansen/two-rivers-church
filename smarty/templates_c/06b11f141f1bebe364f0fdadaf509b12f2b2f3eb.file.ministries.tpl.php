@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.0.7, created on 2011-06-21 15:29:05
+<?php /* Smarty version Smarty-3.0.7, created on 2011-07-22 09:55:55
          compiled from "/var/trc/smarty/templates/ministries.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:14082069514e011b315495e2-21782002%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:15566566514e29ab9b794212-87441891%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '06b11f141f1bebe364f0fdadaf509b12f2b2f3eb' => 
     array (
       0 => '/var/trc/smarty/templates/ministries.tpl',
-      1 => 1308695344,
+      1 => 1309448938,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '14082069514e011b315495e2-21782002',
+  'nocache_hash' => '15566566514e29ab9b794212-87441891',
   'function' => 
   array (
   ),
@@ -34,10 +34,8 @@ if ($_smarty_tpl->_count($_from) > 0){
     foreach ($_from as $_smarty_tpl->tpl_vars['ministry']->key => $_smarty_tpl->tpl_vars['ministry']->value){
 ?>
 			<span class="title" onclick="showMinistryDiv('<?php echo $_smarty_tpl->tpl_vars['ministry']->value['ID'];?>
-');" style="margin:0px 0px 12px 12px;cursor:pointer;">
-				<?php echo $_smarty_tpl->tpl_vars['ministry']->value['title'];?>
-
-			</span>
+');" style="margin:0px 0px 12px 12px;cursor:pointer;"><?php echo $_smarty_tpl->tpl_vars['ministry']->value['title'];?>
+</span>
 		<?php }} ?>
 	</div>
 </div>
