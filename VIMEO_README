@@ -1,0 +1,16 @@
+Two Rivers Church Website
+
+Consumer Key: 53a43bad017df9a37fb1ab3c2d7b1533
+Consumer Secret: ddf38cebad92291f Please do not share this with others
+Callback URL: Not set
+Upload Access: No - request
+
+Description:
+No description set.
+
+Purpose: (not shown to users)
+This is the website for Two Rivers Church in Denver, CO. We use Vimeo to 
+host our sermons and media and then we stream it through our site. The API 
+is so that we can upload, edit, and pull media from Vimeo. Thus, this will 
+not be open to our website users, it will only be available to web admins 
+who are logged in. 

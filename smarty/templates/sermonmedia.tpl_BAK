@@ -17,19 +17,23 @@
 	</div>
 </div>-->
 
+<div class="demo">
+
 <div class="scroll-pane ui-widget ui-widget-header ui-corner-all" style="margin-bottom:20px;background:transparent;border:none;">
-	<div class="scroll-content">
+	<div class="scroll-content" style="margin-bottom:10px;">
 		{foreach from=$sermon_array item=sermon name=foo}
 			<div class="scroll-content-item ui-widget-header" style="background:transparent;border:0;">
 				<span style="font-size:12px;">{$sermon.passage}</span><br />
-				<img src="images/series/{$sermon.thumbnail}" onclick="sermon_activate({$sermon.vimeo_number})" width="140" />
+				<img src="images/series/{$sermon.thumbnail}" onclick="sermon_activate({$sermon.vimeo_number})" width="100" />
 			</div>
 		{/foreach}
 	</div>
-	<div class="scroll-bar-wrap ui-widget-content ui-corner-all">
+	<div class="scroll-bar-wrap ui-widget-content ui-corner-bottom">
 		<div class="scroll-bar"></div>
 	</div>
 </div>
+
+</div><!-- End demo -->
 
 
 {include file='footer.tpl'}

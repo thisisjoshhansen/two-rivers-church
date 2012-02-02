@@ -15,8 +15,8 @@
 	@version		SVN: $Id$
 */
 
-require_once('/var/trc/libs/gen.php');
-require_once('/var/trc/controls/class.email.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/libs/gen.php');
+require_once($_SERVER['DOCUMENT_ROOT'].'/controls/class.email.php');
 
 class models {
         
