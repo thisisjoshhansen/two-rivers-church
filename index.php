@@ -2,8 +2,8 @@
 
 session_start();
 
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
 
 # SMARTY includes
 require('libs/smarty/Smarty.class.php');
@@ -24,17 +24,12 @@ include("models/class.models.TRC_corevalues.php");
 include("models/class.models.TRC_doctrine.php");
 include("models/class.models.TRC_ministries.php");
 
-$smarty->assign('sessionType', 'none');
-if( isset($_SESSION['admin']) ) {
-	if( $_SESSION['admin'] )
-		$smarty->assign('sessionType', 'admin');
-}
-// start the logic to get the correct page.
-$page = '';
-if( !empty($_GET['page'])) $page = $_GET['page'];
+// Set the session permission level
+isset($_SESSION['admin']) ? $smarty->assign('sessionType', 'admin') : $smarty->assign('sessionType', 'none');
 
-$sub = '';
-if( !empty($_GET['sub'])) $sub = $_GET['sub'];
+// start the logic to get the correct page.
+$page = isset($_GET['page']) ? $_GET['page'] : null;
+$sub = isset($_GET['sub']) ? $_GET['sub'] : null;
 
 switch( $page ) {
 	case 'newhere':

@@ -65,3 +65,9 @@ function dispActiveUL() {
 	var activeUL = document.getElementById("id_subNav_activeUL");
 	activeUL.setAttribute("class", "subNav_activeUL");
 }
+
+
+// SERMONS & MEDIA //
+function sermon_activate(sermon_id) {
+	
+}

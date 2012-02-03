@@ -4,7 +4,7 @@ session_start();
 
 // Create the object and enable caching
 $vimeo = new phpVimeo('53a43bad017df9a37fb1ab3c2d7b1533', 'ddf38cebad92291f');
-$vimeo->enableCache(phpVimeo::CACHE_FILE, './cache', 300);
+$vimeo->enableCache(phpVimeo::CACHE_FILE, $_SESSION{'DOCUMENT_ROOT'}.'/vimeo/cache', 300);
 
 // Clear session
 if ($_GET['clear'] == 'all') {

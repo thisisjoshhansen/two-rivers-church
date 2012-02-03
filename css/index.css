@@ -282,18 +282,6 @@ h2 {
 	width:100%;
 }
 
-/*****************************
-*****	LOGIN/LOGOUT	*****
-*****************************/
-#sermon_play_container {
-	float:left;
-	position:relative;
-	left:25%;
-	text-align:center;
-}
-#sermon_play_iframe {
-	border:8px #FF0000 solid;
-}
 
 /**********************************
 *****	SERMONS & MEDIA	*****
@@ -308,3 +296,36 @@ h2 {
 .scroll-bar-wrap .ui-slider-handle { top:.2em; height: 1.5em; }
 .scroll-bar-wrap .ui-slider-handle .ui-icon { margin: -8px auto 0; position: relative; top: 50%; }
 
+#sermon_play_container,
+#sermon_play_leftcontent,
+#sermon_play_rightcontent {
+	float:left;
+	margin:0px 4px 20px;
+	height:345;
+	border:#404040 solid 1px;
+}
+#sermon_play_container > iframe {
+	width:468;
+	height:350;
+}
+#sermon_play_leftcontent,
+#sermon_play_rightcontent {
+	float:left;
+	width:214px;
+	background-color:#1f1f22;
+	padding:4px;
+	text-align:left;
+	font-size:1em;
+	line-height:1em;
+}
+.sermon_staged_active > img,
+.sermon_staged > img {
+	width:120px;
+}
+.sermon_staged {
+	cursor:pointer;
+}
+.sermon_staged_active {
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
