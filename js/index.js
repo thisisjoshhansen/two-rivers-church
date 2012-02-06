@@ -68,6 +68,25 @@ function dispActiveUL() {
 
 
 // SERMONS & MEDIA //
-function sermon_activate(sermon_id) {
+function sermon_activate(sermon) {
+	// Check to see if this sermon is already active
+	if( $('#sermon_staged_'+sermon.id).hasClass('sermon_staged_active') ) return;
 	
+	// Update visible info
+	$('#sermon_play_iframe').attr('src', "http://player.vimeo.com/video/" + sermon.id);
+	$('#sermon_play_title').html(sermon.title);
+	$('#sermon_play_leftcontent > .title').html(sermon.title);
+	$('#sermon_play_leftcontent > .content').html(sermon.description);
+
+	// Switch around active and inactive classes
+	$('.sermon_staged_active')	.addClass('sermon_staged')
+							.removeClass('sermon_staged_active');
+	$('#sermon_staged_'+sermon.id).addClass('sermon_staged_active')
+							.removeClass('sermon_staged');
 }
+
+
+
+
+
+

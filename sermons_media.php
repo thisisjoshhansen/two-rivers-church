@@ -12,11 +12,6 @@ foreach($series_array as &$series) {
 	$series->sermons = $result->videos->video;
 }
 
-//print '<pre>';
-//print_r($series_array[0]);
-//print '</pre><br /><br /><br />';
-//exit;
-
 // Get the sub page if there is one
 $sub = isset($_GET['sub']) ? $_GET['sub'] : null;
 switch( $sub ) {
