@@ -24,7 +24,7 @@ switch( $sub ) {
 		$smarty->display('construction.tpl');exit;
 		break;
 	default:
-
+		$smarty->display('construction.tpl');exit;
 }
 
 $smarty->assign('series_array', $series_array);
